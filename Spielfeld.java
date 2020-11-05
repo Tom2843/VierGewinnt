@@ -81,7 +81,6 @@ public class Spielfeld
      */
     private boolean pruefeVierDiagonalLR ()
     {
-        boolean erg = false;
         for(int i=0;i<Spielfeld.length-2;i++)
         {
             for (int a=0; a < array[0].lenght-2; a++)
@@ -91,10 +90,6 @@ public class Spielfeld
                 Spielfeld[i][a].gibZeichen() == Spielfeld[i+3][a+3].gibZeichen())
             {
                 return true;
-            }
-            else
-            {
-                return false;
             }
     }
 
