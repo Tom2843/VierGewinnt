@@ -62,16 +62,22 @@ public class Spielfeld
     private boolean pruefeVierInEinerSpalte ()
     {
         boolean erg = false;
-        for (int j = 0; j>Spielfeld.length; j++)
+        for (int i = 0; i>Spielfeld.length; i++)
         {
-            for(int i = 0; i>Spielfeld.length-4; i++)
-            {
-                if(Spielfeld[j][i].gibZeichen() == Spielfeld[j][i+1].gibZeichen() &&
-                   Spielfeld[j][i].gibZeichen() == Spielfeld[j][i+2].gibZeichen() &&
-                   Spielfeld[j][i].gibZeichen() == Spielfeld[j][i+3].gibZeichen() )
+            for(int j = 0; j>Spielfeld.length-4; j++)
+            {   
+            if (Spielfeld[i][j]!=null   &&
+                Spielfeld[i][j+1]!=null &&                                                   
+                Spielfeld[i][j+2]!=null &&
+                Spielfeld[i][j+3]!=null )
+            {  
+                if(Spielfeld[i][j].gibZeichen() == Spielfeld[i][j+1].gibZeichen() &&
+                   Spielfeld[i][j].gibZeichen() == Spielfeld[i][j+2].gibZeichen() &&
+                   Spielfeld[i][j].gibZeichen() == Spielfeld[i][j+3].gibZeichen() )
                 {
                     return true;
                 }
+            }
             }
         }
         return erg;
