@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Spielfeld
 {
     private Stein [][] Spielfeld;
-
+    
     public Spielfeld()
     {
         this.Spielfeld = new Stein [7][6];
@@ -62,6 +62,24 @@ public class Spielfeld
     private boolean pruefeVierInEinerSpalte ()
     {
         boolean erg = false;
+        for (int i = 0; i>Spielfeld.length; i++)
+        {
+            for(int j = 0; j>Spielfeld.length-4; j++)
+            {   
+            if (Spielfeld[i][j]!=null   &&
+                Spielfeld[i][j+1]!=null &&                                                   
+                Spielfeld[i][j+2]!=null &&
+                Spielfeld[i][j+3]!=null )
+            {  
+                if(Spielfeld[i][j].gibZeichen() == Spielfeld[i][j+1].gibZeichen() &&
+                   Spielfeld[i][j].gibZeichen() == Spielfeld[i][j+2].gibZeichen() &&
+                   Spielfeld[i][j].gibZeichen() == Spielfeld[i][j+3].gibZeichen() )
+                {
+                    return true;
+                }
+            }
+            }
+        }
         return erg;
     }       
 
