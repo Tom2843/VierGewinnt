@@ -99,18 +99,22 @@ public class Spielfeld
      */
     private boolean pruefeVierDiagonalLR ()
     {
+    boolean erg = false;
         for(int i=0;i<Spielfeld.length-2;i++)
         {
-            for (int a=0; a < array[0].lenght-2; a++)
+            for (int a=0; a < Spielfeld[0].length-2; a++)
             {
-            if (Spielfeld[i][a].gibZeichen() == Spielfeld[i+1][a+1].gibZeichen() && 
+                if (Spielfeld[i][a].gibZeichen() == Spielfeld[i+1][a+1].gibZeichen() && 
                 Spielfeld[i][a].gibZeichen() == Spielfeld[i+2][a+2].gibZeichen() &&
                 Spielfeld[i][a].gibZeichen() == Spielfeld[i+3][a+3].gibZeichen())
-            {
-                return true;
+                {
+                    return true;
+                }   
             }
+        
+        }
+    return erg;
     }
-
     /**
      * Diese Methode überprüft, ob es Diagonal von Rechts nach Links zu einer Viererreihe gekommen ist. Dazu muss das gesamte Array durchlaufen werden,
      * allerdings kommen in der näheren Betrachtung nur wenige Diagonale in Frage, beispielsweise am Rand gar keine Viererreihen
